@@ -2,6 +2,10 @@
 
 Based on http://www.sandtable.com/forwarding-docker-logs-to-logstash/
 
+## Supported tags
+
+- 5.0.1
+
 ## Example Usage
 
     docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/containers:/var/lib/docker/containers/ -v $(pwd)/filebeat.tmpl:/etc/docker-gen/filebeat.tmpl hampsterx/filebeat-gen
