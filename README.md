@@ -20,14 +20,19 @@ Based on http://www.sandtable.com/forwarding-docker-logs-to-logstash/
           paths:
             - /var/lib/docker/containers/{{ $value.ID }}/{{ $value.ID }}-json.log
           document_type: filebeat-docker-logs
+          ignore_older: 30m
+          scan_frequency: 5s
+          fields_under_root: true
           fields:
-            type: {{ $value.Image.Repository }}
+            image_name: {{ $value.Image.Repository }}
+            image_tag: {{ $value.Image.Tag }}
             container: {{ $value.ID }}
+
       {{ end }}
     output:
       logstash:
         hosts:
-          - <your_logstash_domain>:5044
+          - <<your_host_here>>:5044
         timeout: 5
     logging:
       level: info
