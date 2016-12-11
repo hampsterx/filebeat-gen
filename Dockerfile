@@ -2,7 +2,7 @@
 
 FROM debian:jessie
 
-ENV FILEBEAT_VERSION=5.0.1
+ENV FILEBEAT_VERSION=5.1.1
 
 RUN set -x && \
   apt-get update && \

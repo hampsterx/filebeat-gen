@@ -4,6 +4,7 @@ Based on http://www.sandtable.com/forwarding-docker-logs-to-logstash/
 
 ## Supported tags
 
+- 5.1.1
 - 5.0.1
 
 ## Example Usage
